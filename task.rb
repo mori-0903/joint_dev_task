@@ -5,7 +5,7 @@ def q1
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-  names.push("斎藤")
+  names << "斎藤"
   puts names
 end
 
@@ -22,8 +22,9 @@ def q3
   numbers = [1, 5, 8, 10, 2, 3, 2, 3, 3, 1, 4, 5, 9]
 
   # 以下に回答を記載
-  count_three = numbers.find { |v| v == 3 }
-  puts count_three
+  # count_three = numbers.find { |v| v == 3 }
+  # puts count_three
+  puts numbers.count(3)
 end
 
 def q4
@@ -48,7 +49,7 @@ def q6
   numbers1 = [1, 2, 3, 4, 5]
 
   # 以下に回答を記載
-  numbers2 = numbers1.map { |value| value * 10 }
+  numbers2 = numbers1.map { |num| num * 10 }
   puts numbers2
 end
 
@@ -56,7 +57,7 @@ def q7
   array = ["1", "2", "3", "4", "5"]
 
   # 以下に回答を記載
-  array.map! { |value| value.to_i }
+  array.map!(&:to_i)
   # 以下は変更しないで下さい
   p array
 end
@@ -65,8 +66,8 @@ def q8
   programming_languages = %w(ruby php python javascript)
 
   # 以下に回答を記載
-  programming_languages.map! { |str| str.capitalize }
-  upper_case_programming_languages = programming_languages.map { |str| str.upcase }
+  programming_languages.map!(&:capitalize)
+  upper_case_programming_languages = programming_languages.map(&:upcase)
   # 以下は変更しないで下さい
   p programming_languages
   p upper_case_programming_languages
